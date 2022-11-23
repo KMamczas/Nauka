@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+
+<body>
+    <script>
+
+        let graph = [
+            [0, 0, 1, 0, 1, 0, 0, 0],
+            [0, 0, 1, 1, 0, 1, 0, 0],
+            [1, 1, 0, 0, 0, 1, 0, 0],
+            [0, 1, 0, 0, 1, 1, 1, 0],
+            [1, 0, 0, 1, 0, 0, 0, 1],
+            [0, 1, 1, 1, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0, 0, 1],
+            [0, 0, 0, 0, 1, 0, 1, 0],
+        ]
+
+        function graphMultiple(graph) {
+
+            for (i = 0; i < 7; i++) {
+                for (l = 0; l < 7; l++) {
+                    graph[i][l] *= getRandomInt()
+                }
+            }
+            console.log(graph)
+
+            return graph
+        }
+
+        function mostVaule(graph) {
+            let mostValue = 0
+
+            for (i = 0; i < 7; i++) {
+                for (l = 0; l < 7; l++) {
+                    if (mostValue < graph[i][l]) {
+                        mostValue = graph[i][l]
+                    }
+                }
+            }
+            for (i = 0; i < 7; i++) {
+                for (l = 0; l < 7; l++) {
+                    if (mostValue == graph[i][l]) {
+                        console.log("Największa waga krawędzi łaczy wierzchołki: " + i + " i " + l)
+                    }
+                }
+            }
+        }
+
+        function getRandomInt() {
+            return Math.floor(Math.random() * 20 + 5);
+        }
+
+        mostVaule(graphMultiple(graph))
+    </script>
+</body>
+
+</html>
