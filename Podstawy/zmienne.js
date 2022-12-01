@@ -9,7 +9,7 @@
 let txt = "Przykładowy tekst"; //zmienna
 txt = "Inny tekst"; //zmieniamy wartość
 
-const nr = 102; //stała
-nr = 103; //błąd - nie można przypisać nowej wartości
+const x = 102; //stała
+x = 103; //błąd - nie można przypisać nowej wartości
 
 
