@@ -50,3 +50,29 @@ console.log( parseInt("Hello", 10)); //NaN
 
 console.log( "20px" + "20px"); //20px20px
 console.log( parseInt("20px", 10) + parseInt("20px", 10) + "px"); //40px
+
+Boolean(102); //true
+Boolean("kot"); //true
+
+Boolean(false); //false
+Boolean(null); //false
+Boolean(undefined); //false
+Boolean(0); //false
+Boolean(NaN); //false
+Boolean(""); //false
+Boolean(document.all); //false
+
+function randomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}
+
+console.log( randomColor() );
+console.log( randomColor() );
+console.log( randomColor() );
