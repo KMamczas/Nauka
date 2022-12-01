@@ -19,3 +19,11 @@ if (Array.isArray(arr)) {console.log("kupa")}
 if (typeof ob === "object") {console.log("kupa")}
 if (n === null) {console.log("kupa")}
 if (typeof zzz === "undefined") {console.log("kupa")}
+
+const txt1A = "Ala";
+const txt1B = "Ala";
+console.log(txt1A === txt1B); //true
+
+const txt2A = new String("Ala");
+const txt2B = new String("Ala");
+console.log(txt2A === txt2B); //false
