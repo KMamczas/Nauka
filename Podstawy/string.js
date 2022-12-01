@@ -11,3 +11,5 @@ const text4 = `Cena produktu A to ${a}zł, cena produktu B to ${b}zł, a suma to
 
 console.log(text3)
 console.log(text4)
+
+
