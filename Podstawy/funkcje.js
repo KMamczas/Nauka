@@ -99,3 +99,11 @@ const myFyn = () => {
 [3,1,2].sort((a, b) => {
     return a-b
 })
+
+const getObj = function(name) {
+    return { team : name, score : 0 }
+}
+
+// const getObj1 = name => { team : name, score : 0 } //błąd
+
+const getObj2 = name => ({ team : name, score : 0 }) //ok
