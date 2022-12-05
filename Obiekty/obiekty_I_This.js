@@ -84,7 +84,7 @@ person.pet.collar.color //"red"
 person.pet.favoriteFood[1] //"mięso"
 
 
-
+//Dodawanie własciwości obiektu
 
 const cat = {
     name: "Szama",
@@ -103,5 +103,27 @@ cat.eat = function() {
 console.log(cat.eat());
 console.log(cat.showText());
 
+//usuwanie właściwości obiektu
 
+const car = {
+    brand: "Mercedes",
+    color: "czerwony",
+    showText() {
+        console.log(`${this.brand} koloru ${this.color}`);
+    }
+}
+
+console.log(car.color); //czerwony
+delete car.color;
+console.log(car.color); //undefined
+
+const car1 = {
+    brand: "Mercedes",
+    color: "czerwony",
+    showText() { console.log("kupa") }
+}
+
+for (const key in car1) {
+    console.log(key); //brand, color, showText
+}
 
