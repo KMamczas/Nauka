@@ -127,3 +127,24 @@ for (const key in car1) {
     console.log(key); //brand, color, showText
 }
 
+//this...
+
+const car2 = {
+    name: "Mercedes",
+    color: "czerwony",
+
+    drive() {
+        console.log(this); //car
+        console.log(`${this.name} sobie jedzie`);
+    },
+
+    showText() {
+        console.log(`${this.name} koloru ${this.color}`);
+    }
+}
+
+car2.drive(); //"Mercedes sobie jedzie"
+car2.showText(); //"Mercedes koloru czerwony"
+
+
+
