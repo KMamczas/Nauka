@@ -69,6 +69,9 @@ console.log(name1, name2, name3); //"Ala", "Ola", "brak"
     console.log(pet); //"brak"
 }
 
+
+
+//Przekazwyanie danych do funkcji - bardziej uniwersalne
 {
 function showUser({name, surname}) {
     console.log(name);
@@ -88,4 +91,82 @@ showUser(user);
 buttons.forEach(({innerText : text, id}) => {
     console.log(`Tekst elementu to ${text} a jego id to ${id}`);
 });
+}
+
+
+{
+    //do poniższej funkcji ktoś mi przekaże obiekt, a ja go od razu rozbiję na odpowiednie zmienne
+function print({name, speed, color, food}) {
+    console.log(`
+        Nazwa : ${name}
+        Szybkość : ${speed}
+        Kolor : ${color}
+        Ulubione jedzenie : ${food}
+    `);
+}
+
+print({
+    name : "Szamson",
+    speed : 10000,
+    food : "Mięso",
+    color : "brown",
+})
+
+//lub jeżeli mam już wcześniej zmienne
+//mogę stworzyć obiekt z takimi kluczami:
+
+const name = "Szamson";
+const speed = 10000;
+const color = "brown";
+const food = "mięso";
+const type = "dog";
+
+//kolejność nie ma znaczenia
+print({name, food, speed, type, color}); //dodatkowy klucz type nie ma znaczenia
+
+//bo to jest to samo co:
+print({
+    name : name,
+    food : food,
+    speed : speed,
+    type : type,
+    color : color
+});
+}
+
+
+//REST - te magiczne trzy kropki
+{
+    const tab = [1, 2, 3, 4, 5];
+
+const [first, ...other] = tab;
+
+console.log(first, other); //1, [2, 3, 4, 5]
+}
+
+{
+    const carData = {
+        brand : "BMW",
+        color: "red",
+        maxSpeed : 260,
+        owner: "Jan Nowak",
+        ownerAge : 30
+    }
+    
+    const {owner, ownerAge, ...car} = carData;
+    
+    console.log(car); //car bez właściwości owner i ownerAge
+}
+
+{
+    const pet = {
+        name : "Szamson",
+        speed : 1000,
+    }
+    
+    const pet2 = {...pet}
+    pet2.height = 40;
+    
+    console.log(pet); //{name : "Szamson", speed : 1000}
+    console.log(pet2); //{name : "Szamson", speed : 1000, height: 40}
 }
