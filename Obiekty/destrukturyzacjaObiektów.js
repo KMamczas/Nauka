@@ -170,3 +170,41 @@ console.log(first, other); //1, [2, 3, 4, 5]
     console.log(pet); //{name : "Szamson", speed : 1000}
     console.log(pet2); //{name : "Szamson", speed : 1000, height: 40}
 }
+
+
+
+//Złożona destrukturyzacja
+
+{
+    const myObj = {
+        first_name : "Karol",
+        last_name : "Nowak",
+        role : "driver",
+    
+        pets: ["pies", "kot"],
+    
+        car : {
+            name : "Honda",
+            year: 2002,
+            type : "hatchback"
+        }
+    }
+    
+    const {
+        first_name: name,
+        last_name : surname,
+        role,
+    
+        pets : [
+            pet1,
+            pet2
+        ],
+    
+        car : {
+            name : carName,
+            year : carYear,
+            type : carType
+        }
+    } = myObj || {}
+}
+
